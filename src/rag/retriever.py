@@ -1,11 +1,11 @@
 from typing import List, Dict, Any
 
-from langchain_chroma import Chroma
 from langchain import hub
 from langchain.chains.retrieval import create_retrieval_chain
 from langchain.chains.combine_documents import create_stuff_documents_chain
 
-def get_qa_chain(vectorstore: Chroma, llm, k: int=3):
+
+def get_qa_chain(vectorstore, llm, k: int=3):
     retriever = vectorstore.as_retriever(searck_kwargs={
         'k': k
     })
